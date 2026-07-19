@@ -172,6 +172,7 @@ const BookingModal = ({ doctor, onClose, onSuccess }) => {
           orderId: order.id,
           amount: order.amount,
         });
+        setBooking(false);
       }
     } catch (err) {
       const errorMsg = err.response?.data?.error || err.message || 'Booking process failed';
