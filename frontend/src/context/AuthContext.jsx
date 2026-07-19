@@ -5,7 +5,10 @@ const AuthContext = createContext();
 
 // Setup base URL for Axios dynamically using current window hostname
 const apiHost = typeof window !== 'undefined' ? window.location.hostname : 'localhost';
-axios.defaults.baseURL = `http://${apiHost}:5001`;
+const isProd = !apiHost.includes('localhost') && !apiHost.includes('192.168.');
+axios.defaults.baseURL = isProd 
+  ? 'https://aegiscare-backend.onrender.com' 
+  : `http://${apiHost}:5001`;
 
 export const AuthProvider = ({ children }) => {
   const [user, setUser] = useState(null);

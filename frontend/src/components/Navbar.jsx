@@ -19,7 +19,10 @@ const Navbar = () => {
     }
 
     // Connect to Socket.io server
-    const socket = io(`http://${window.location.hostname}:5001`);
+    const apiHost = window.location.hostname;
+    const isProd = !apiHost.includes('localhost') && !apiHost.includes('192.168.');
+    const socketUrl = isProd ? 'https://aegiscare-backend.onrender.com' : `http://${apiHost}:5001`;
+    const socket = io(socketUrl);
 
     // Register user room ID
     if (user.role === 'doctor') {

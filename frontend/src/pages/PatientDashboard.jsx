@@ -499,7 +499,7 @@ const PatientDashboard = () => {
                                 <span className="box-lbl">📄 Prescriptions & Doctor Notes:</span>
                                 <p className="prescription-notes" style={{ marginBottom: '0.8rem' }}>{app.prescription}</p>
                                 <a
-                                  href={`http://${window.location.hostname}:5001/api/appointments/${app._id}/prescription-pdf?token=${localStorage.getItem('token')}`}
+                                  href={`${!window.location.hostname.includes('localhost') && !window.location.hostname.includes('192.168.') ? 'https://aegiscare-backend.onrender.com' : `http://${window.location.hostname}:5001`}/api/appointments/${app._id}/prescription-pdf?token=${localStorage.getItem('token')}`}
                                   target="_blank"
                                   rel="noopener noreferrer"
                                   className="btn btn-secondary btn-sm"
