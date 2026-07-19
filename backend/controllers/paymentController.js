@@ -28,10 +28,11 @@ exports.createOrder = async (req, res) => {
     const isLive = process.env.RAZORPAY_KEY_ID && process.env.RAZORPAY_KEY_SECRET;
 
     if (isLive) {
+      console.log(`[Diagnostic] Razorpay Keys loaded. ID Length: ${process.env.RAZORPAY_KEY_ID.trim().length} (raw: ${process.env.RAZORPAY_KEY_ID.length}), Secret Length: ${process.env.RAZORPAY_KEY_SECRET.trim().length} (raw: ${process.env.RAZORPAY_KEY_SECRET.length})`);
       try {
         const instance = new Razorpay({
-          key_id: process.env.RAZORPAY_KEY_ID,
-          key_secret: process.env.RAZORPAY_KEY_SECRET,
+          key_id: process.env.RAZORPAY_KEY_ID.trim(),
+          key_secret: process.env.RAZORPAY_KEY_SECRET.trim(),
         });
 
         const options = {
