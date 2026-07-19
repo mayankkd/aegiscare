@@ -122,6 +122,13 @@ const limiter = rateLimit({
 app.use('/api', limiter);
 
 app.use(express.json());
+app.use((req, res, next) => {
+  console.log(`[API Request] ${req.method} ${req.originalUrl} - Received`);
+  res.on('finish', () => {
+    console.log(`[API Response] ${req.method} ${req.originalUrl} - Status: ${res.statusCode}`);
+  });
+  next();
+});
 app.use('/uploads', express.static(path.join(__dirname, 'uploads')));
 
 // Swagger Documentation Route
