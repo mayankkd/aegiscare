@@ -132,7 +132,7 @@ exports.sendMedicineReminderEmail = async (patientEmail, patientName, medicineNa
 };
 
 // Base Mail Dispatcher helper
-exports.sendMail = async (to, subject, html) => {
+const sendMail = async (to, subject, html) => {
   if (transporter) {
     try {
       await transporter.sendMail({
@@ -158,3 +158,4 @@ ${html.replace(/<[^>]*>/g, '').trim().substring(0, 300)}...
     `);
   }
 };
+exports.sendMail = sendMail;
