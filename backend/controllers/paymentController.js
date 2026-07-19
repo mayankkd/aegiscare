@@ -53,7 +53,7 @@ exports.createOrder = async (req, res) => {
           order,
         });
       } catch (err) {
-        console.error('Razorpay live order error:', err.message);
+        console.error('Razorpay live order error:', err);
         // Fall through to sandbox mode on gateway failure
       }
     }
