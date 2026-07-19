@@ -20,7 +20,7 @@ const server = http.createServer(app);
 // Initialize Socket.io
 const io = new Server(server, {
   cors: {
-    origin: ['http://localhost:5173', 'http://localhost:5174'],
+    origin: ['http://localhost:5173', 'http://localhost:5174', 'https://aegiscare-frontend.onrender.com'],
     methods: ['GET', 'POST'],
   },
 });

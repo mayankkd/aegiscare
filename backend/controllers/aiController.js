@@ -164,6 +164,7 @@ exports.chatWithAi = async (req, res) => {
       emergencyDetected,
     });
   } catch (error) {
+    console.error('AI chat controller error:', error);
     res.status(500).json({ success: false, error: error.message });
   }
 };
