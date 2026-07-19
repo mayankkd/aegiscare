@@ -47,7 +47,7 @@ exports.analyzeSymptoms = async (req, res) => {
     }
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-3.5-flash' });
 
     const prompt = `You are an expert AI clinical medical assistant. A patient is reporting the following symptoms:
 "${symptomsText}"
@@ -130,7 +130,7 @@ exports.chatWithAi = async (req, res) => {
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
     const chatModel = genAI.getGenerativeModel({ 
-      model: 'gemini-2.5-flash',
+      model: 'gemini-3.5-flash',
       systemInstruction: `You are AegisCare's Advanced AI Medical Assistant. Your goals:
 1. Explain medical diseases, symptoms, and healthcare guidelines.
 2. Explain medicines (standard usage, side effects, precautions).
@@ -210,7 +210,7 @@ exports.scanReport = async (req, res) => {
     }
 
     const genAI = new GoogleGenerativeAI(process.env.GEMINI_API_KEY);
-    const model = genAI.getGenerativeModel({ model: 'gemini-2.5-flash' });
+    const model = genAI.getGenerativeModel({ model: 'gemini-3.5-flash' });
 
     const generativePart = {
       inlineData: {
