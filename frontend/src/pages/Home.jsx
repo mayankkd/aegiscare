@@ -23,6 +23,7 @@ const Home = () => {
   const [city, setCity] = useState('');
   const [language, setLanguage] = useState('');
   const [minRating, setMinRating] = useState('');
+  const [selectedDate, setSelectedDate] = useState('');
   
   // Booking modal state
   const [selectedDoctor, setSelectedDoctor] = useState(null);
@@ -38,6 +39,7 @@ const Home = () => {
       if (city) url += `&city=${encodeURIComponent(city)}`;
       if (language) url += `&language=${encodeURIComponent(language)}`;
       if (minRating) url += `&minRating=${minRating}`;
+      if (selectedDate) url += `&date=${selectedDate}`;
 
       const res = await axios.get(url);
       if (res.data.success) {
@@ -58,7 +60,7 @@ const Home = () => {
     }, 300);
 
     return () => clearTimeout(delayDebounceFn);
-  }, [search, specialization, experience, maxFee, location, city, language, minRating]);
+  }, [search, specialization, experience, maxFee, location, city, language, minRating, selectedDate]);
 
   useEffect(() => {
     const apiHost = window.location.hostname;
@@ -264,6 +266,18 @@ const Home = () => {
               value={location}
               onChange={(e) => setLocation(e.target.value)}
               style={{ fontSize: '0.8rem', padding: '0.45rem' }}
+            />
+          </div>
+
+          {/* Filter by Available Date */}
+          <div className="form-group" style={{ margin: 0 }}>
+            <label className="form-label" style={{ fontSize: '0.75rem', marginBottom: '0.15rem' }}>Available On Date</label>
+            <input
+              type="date"
+              className="form-input"
+              value={selectedDate}
+              onChange={(e) => setSelectedDate(e.target.value)}
+              style={{ fontSize: '0.8rem', padding: '0.45rem', height: 'auto', minHeight: '34px', width: '100%' }}
             />
           </div>
         </div>
