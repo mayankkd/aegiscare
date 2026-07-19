@@ -387,6 +387,14 @@ a:hover {
   font-size: 0.8rem;
 }
 
+.btn:disabled, .btn[disabled] {
+  background-color: #e9ecef !important;
+  border-color: #dee2e6 !important;
+  color: #adb5bd !important;
+  cursor: not-allowed !important;
+  pointer-events: none !important;
+}
+
 .w-full {
   width: 100%;
 }
