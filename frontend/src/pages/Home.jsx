@@ -196,38 +196,6 @@ const Home = () => {
             </select>
           </div>
 
-          {/* Language */}
-          <div className="form-group" style={{ margin: 0 }}>
-            <label className="form-label" style={{ fontSize: '0.75rem', marginBottom: '0.15rem' }}>Language</label>
-            <select
-              className="form-select"
-              value={language}
-              onChange={(e) => setLanguage(e.target.value)}
-              style={{ fontSize: '0.8rem', padding: '0.45rem', height: 'auto', minHeight: '34px', width: '100%' }}
-            >
-              <option value="">All Languages</option>
-              <option value="Hindi">Hindi</option>
-              <option value="English">English</option>
-              <option value="Tamil">Tamil</option>
-            </select>
-          </div>
-
-          {/* Min Rating */}
-          <div className="form-group" style={{ margin: 0 }}>
-            <label className="form-label" style={{ fontSize: '0.75rem', marginBottom: '0.15rem' }}>Min Rating</label>
-            <select
-              className="form-select"
-              value={minRating}
-              onChange={(e) => setMinRating(e.target.value)}
-              style={{ fontSize: '0.8rem', padding: '0.45rem', height: 'auto', minHeight: '34px', width: '100%' }}
-            >
-              <option value="">Any Rating</option>
-              <option value="4.0">⭐ 4.0 & above</option>
-              <option value="4.5">⭐ 4.5 & above</option>
-              <option value="4.8">⭐ 4.8 & above</option>
-            </select>
-          </div>
-
           {/* Experience */}
           <div className="form-group" style={{ margin: 0 }}>
             <label className="form-label" style={{ fontSize: '0.75rem', marginBottom: '0.15rem' }}>Experience</label>
