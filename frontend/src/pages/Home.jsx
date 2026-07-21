@@ -123,11 +123,11 @@ const Home = () => {
         </p>
         <div className="hero-stats">
           <div className="stat-item">
-            <span className="stat-number">10k+</span>
+            <span className="stat-number">50+</span>
             <span className="stat-label">Active Patients</span>
           </div>
           <div className="stat-item">
-            <span className="stat-number">150+</span>
+            <span className="stat-number">10+</span>
             <span className="stat-label">Specialist Doctors</span>
           </div>
           <div className="stat-item">
