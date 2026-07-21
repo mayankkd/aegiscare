@@ -105,6 +105,11 @@ const Home = () => {
     'Pediatrician',
     'General Physician',
     'Neurologist',
+    'Gynecologist',
+    'Orthopedic',
+    'Psychiatrist',
+    'ENT Specialist',
+    'Oncologist',
   ];
 
   return (
